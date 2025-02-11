@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+  font-family: "Heebo", sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #00aaff;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+p,
+#week-dates {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #bbbbbb;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Logo Styling */
+#vaad-logo {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: auto;
+  filter: invert(1);
+}
+
+/* Styling for text blocks */
+.info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00aaff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  margin: 10px auto;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+}
+
+/* Emoji Styling */
+.emoji {
+  font-size: 2rem;
+}
+
+/* Table Styling */
+.schedule-table {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.schedule-table .hours {
+  direction: ltr;
+}
+
+.schedule-table th {
+  background-color: #00aaff;
+  color: #121212;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  p,
+  #week-dates {
+    font-size: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .info-box {
+    font-size: 1.2rem;
+    padding: 10px;
+
+    .emoji {
+      display: none;
+    }
+  }
+  .schedule-table th,
+  .schedule-table td {
+    font-size: 1rem;
+  }
+
+  #vaad-logo {
+    width: 60px;
+    top: 10px;
+    right: 10px;
+  }
+}

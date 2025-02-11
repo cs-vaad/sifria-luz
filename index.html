@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>CS Library</title>
+  </head>
+  <body>
+    <h1>📚 מתי הספרייה פתוחה?</h1>
+
+    <div class="info-box">
+      <span class="emoji">📆</span>
+      <p id="day-text">
+        שעות פתיחה לשבוע:
+        <span id="week-dates"></span>
+      </p>
+    </div>
+
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>יום</th>
+          <th>שעות פתיחה</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ראשון</td>
+          <td class="hours">9:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>שני</td>
+          <td class="hours">9:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>שלישי</td>
+          <td class="hours">9:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>רביעי</td>
+          <td class="hours">9:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>חמישי</td>
+          <td class="hours">9:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>שישי</td>
+          <td class="hours">9:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>שבת</td>
+          <td class="hours">9:00 - 19:00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      window.addEventListener("load", () => {
+        const today = new Date();
+        const days = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"];
+
+        const getFormattedDate = (date) => {
+          return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        };
+
+        // Get Sunday (start of the week)
+        const startOfWeek = new Date(today);
+        startOfWeek.setDate(today.getDate() - today.getDay());
+
+        // Get Saturday (end of the week)
+        const endOfWeek = new Date(today);
+        endOfWeek.setDate(today.getDate() + (6 - today.getDay()));
+
+        const formattedStart = getFormattedDate(startOfWeek);
+        const formattedEnd = getFormattedDate(endOfWeek);
+
+        document.getElementById("week-dates").textContent = `${formattedEnd} - ${formattedStart}`;
+      });
+    </script>
+  </body>
+</html>
